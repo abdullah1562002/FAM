@@ -129,6 +129,15 @@ for station in Stations:
 
 
 
+for Station in Stations:
+    for node in range(Number_of_Nodes - 1):
+        if Nodes[node]["Station"] == Station and Nodes[node + 1]["Station"] == Station:
+            ground_link = f"y({node+1}-{node+2})"
+            Nodes[node]["Outbound"].append(ground_link)
+            Nodes[node+1]["Inbound"].insert(0,ground_link)
+
+
+
 
 
 
